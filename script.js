@@ -6,9 +6,14 @@ var blocker = () => {
     }, 100);
     close();
 }
+var pause = () => {
+    let w = window.open('','','HEIGHT=1,WIDTH=1');
+    w.document.write('<script src="script.js"></script><body onclick="start()"><a>CLICK ME TO UNPAUSE!</a></body>');
+    close();
+}
 var renew = () => {
     let w = window.open('','','HEIGHT=1,WIDTH=1');
-    w.document.write('<!DOCTYPE html><html><head><script src="script.js"></script><title>LANSCHOOL WORKER! DONT CLOSE!</title></head><body><script>setTimeout(() => {start();},1000);</script><a>LANSCHOOL WORKER DONT CLOSE!</a></body></html>');
+    w.document.write('<!DOCTYPE html><html><head><script src="script.js"></script><title>LANSCHOOL WORKER DONT CLOSE!</title></head><body onclick="pause()"><script>setTimeout(() => {start();},1000);</script><a>DONT CLOSE!<br><br>CLICK ME TO PAUSE VIEW BLOCK!</a></body></html>');
     close();
 }
 var start = () => {
